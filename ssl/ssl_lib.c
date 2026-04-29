@@ -8085,11 +8085,11 @@ void fill_claim(SSL *s, Claim* claim) {
     // signature algorithm
     const SIGALG_LOOKUP *lu = sc->s3.tmp.sigalg; /* Signature algorithm openssl actually uses */
     if (lu != 0) {
-        claim->signature_algorithm = lu->sig;
+        claim->signature_algorithm = lu->sigalg;
     }
     const SIGALG_LOOKUP *peer_lu = sc->s3.tmp.peer_sigalg; /* Signature algorithm openssl actually uses */
     if (peer_lu != 0) {
-        claim->peer_signature_algorithm = peer_lu->sig;
+        claim->peer_signature_algorithm = peer_lu->sigalg;
     }
 
     // temporary/ephemeral peer key
